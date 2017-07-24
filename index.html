@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>American Jail System</title>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,7 +25,30 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
+				<section>Slide 1
+					<script type="text/javascript">
+	 
+					var data = [150, 230, 180, 90];
+					 
+					var svg = d3.select("body")
+								.append("svg")
+								.attr("width", 300)
+								.attr("height", 200);
+					 
+					svg.selectAll(".bar")
+					  .data(data)
+					  .enter()
+					  .append("rect")
+					  .attr({
+						class : "bar",
+						width : function(d) {return d;},
+						height: "40",
+						y : function(d, i) {return i*50 + 10;},
+						x : "10"
+					   });
+					   
+					</script>	
+				</section>
 				<section>Slide 2</section>
 				<section>Hello World</section>
 			</div>
