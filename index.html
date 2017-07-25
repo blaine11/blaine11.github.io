@@ -21,36 +21,75 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		
+		<style>
+			#circleBar{
+				height: 1000px;
+				width: 500px;
+				position: relative;
+			}
+			#linechart{
+				height: 600px;
+				width: 800px;
+				position: relative;
+			}
+			#firstplot {
+				height: 300px;
+				width: 500px;
+				position: relative;
+			}
+			#second{
+				height: 600px;
+				width: 500px;
+				position: relative;
+			}
+			iframe {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 100%;
+				width: 100%;
+				background: #222222;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1
-					<script type="text/javascript">
-	 
-					var data = [150, 230, 180, 90];
-					 
-					var svg = d3.select("body")
-								.append("svg")
-								.attr("width", 300)
-								.attr("height", 200);
-					 
-					svg.selectAll(".bar")
-					  .data(data)
-					  .enter()
-					  .append("rect")
-					  .attr({
-						class : "bar",
-						width : function(d) {return d;},
-						height: "40",
-						y : function(d, i) {return i*50 + 10;},
-						x : "10"
-					   });
-					   
-					</script>	
+				<section>
+					<section>Title Slide</section>
+					<section>Essay here</section>
 				</section>
-				<section>Slide 2</section>
-				<section>Hello World</section>
+				<section>
+					<p>
+						<iframe id="circleBar" src="html/circleBar.html" scrolling="no" ></iframe>
+					</p>
+				</section>
+				<section><h2>Interactive Line Chart</h2>
+					<p> Description outlining the basic information contained in the interactive line chart that I have created </p>
+					<p>
+						<iframe id="linechart" src="html/linechart.html" scrolling="no" ></iframe>
+					</p>
+				</section>
+				<section>
+					<h2> hello world </h2>
+					<p>
+						<iframe id="firstplot" src="html/scnd.html" scrolling="no" ></iframe>
+					</p>
+				</section>
+				<section>
+					<section>Hello World</section>
+					<section>
+						 This is a functionality test 
+						<p><iframe id="firstplot" src="html/scnd.html" scrolling="no" ></iframe></p>
+					</section>
+					<section data-background-iframe="html/boxhtml.html" data-background-interactive data-background-position="center">
+					
+					</section>
+					<section><p><iframe id="second" src="html/barChart.html" width="100px" heigth="100%"></iframe></p></section>
+				</section>
 			</div>
 		</div>
 

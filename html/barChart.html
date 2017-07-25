@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<script src="http://d3js.org/d3.v4.min.js"></script>
+
+<style> 
+
+	.chart line{
+	    stroke: #ccc;
+	}
+	.chart path{
+	    stroke: #ccc;
+	}
+	.chart text{
+	    stroke: #ccc;
+	}
+	.chart rect { fill: steelblue } 
+	
+</style>
+
+<html><body>
+<p><span id="data"></span></p>
+
+<svg class="chart"></svg>
+
+<script>
+var margin = 40;
+var width = 120;
+var height = 300;
+
+var data = [4,8,15,16,23,42];
+
+
+var x = d3.scaleBand()
+	.domain([0,1,2,3,4,5])
+    .range([0,width]);
+    
+var y = d3.scaleLinear()
+	.domain([0,42])
+    .range([height,0]);
+
+var chart = d3.select(".chart");
+
+chart.attr("width",width + 2*margin)
+    .attr("height",height + 2*margin)
+    .append("g")
+        .attr("transform","translate(" + margin + "," + margin + ")")
+    .selectAll("rect")
+	.data(data)
+    .enter().append("rect")
+    .attr("width",19)
+    .attr("height",function(d) { return height - y(d); })
+    .attr("x",function(d,i) { return x(i); })
+    .attr("y",function(d) { return y(d); });
+
+chart.append("g")
+    .attr("transform", "translate(" + margin + "," + margin + ")")
+    .call(d3.axisLeft(y));
+
+chart.append("g")
+    .attr("transform", "translate(" + margin + "," + (height+margin) + ")")
+    .call(d3.axisBottom(x));
+	
+// Add the Y Axis
+  var axis = svg.append("g")
+    .call(d3.axisLeft(y));
+
+  axis.selectAll("line")
+    .style("stroke", "purple");
+
+  axis.selectAll("path")
+    .style("stroke", "green");
+
+  axis.selectAll("text")
+    .style("stroke", "blue");
+    
+</script>
+
+</body></html>
