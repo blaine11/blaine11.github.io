@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>American Jail System</title>
+		<title>CRE Over Time</title>
 		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 		<link rel="stylesheet" href="css/reveal.css">
@@ -24,12 +24,12 @@
 		
 		<style>
 			#circleBar{
-				height: 1000px;
-				width: 500px;
+				height: 600px;
+				width: 650px;
 				position: relative;
 			}
 			#linechart{
-				height: 600px;
+				height: 380px;
 				width: 800px;
 				position: relative;
 			}
@@ -53,43 +53,105 @@
 				width: 100%;
 				background: #222222;
 			}
+			#overview1{
+				font-size: 28px;
+			}
+			#overview2{
+				font-size: 28px;
+			}
+			#overview3{
+				font-size: 28px;
+			}
+			#title{
+				font-size: 25px;
+			}
+			#totalcre{
+				font-size: 25px;
+			}
+			#subtext{
+				font-size: 15px;
+			}
+			#scenes{
+				font-size: 40px;
+			}
+			#pie{
+				font-size: 25px;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<section>Title Slide</section>
-					<section>Essay here</section>
+					<section>
+						<h1>Commercial Real Estate Over Time</h1>
+						<p id="title">Slide down for essay overview and slide right for data!</p>
+					</section>
+					<section>Overview
+						<p id="overview1">The chosen data-set focuses on answering the question: 'How did the great recession influence the lending market and to what extent has the market recovered'?</p>
+						<p id="overview2">The data-set was procured from the Federal Deposit Insurance Corporation (FDIC) website. The FDIC insures helps encourage confidence in the lending system by backing loans from financial institutions that meet certain criteria. The majority of major lending institutions are FDIC insured, so we may reasonably assume that their data is representative of the national lending climate.</p>
+						<p id="overview3">Since the FDIC has only been in place since the late 1960s the data-set starts in 1980. This is not a concern since the purpose of the data is to show the trend over time, and how 2009-current broke that trend. The line chart data are displayed in millions of dollars, without an explicit axis. This is not important since we are more worried in overall trends than exact numbers.</p>
+						<p id="subtext">Down for more info</p>
+					</section>
+					<section>Hybrid Structure
+						<p id="hybrid">An interactive slide show was selected for the hybrid structure. The interactive slide show allows the user to move through the presentation the author would like them to, while also being allowed to get more information on each individual page. The scenes, annotation, parameters and triggers are specifically built into the design of the interactive slide show.</p>
+						<p id="subtext">Down for more info</p>
+					</section>
+					<section>Scenes
+						<p id="scenes">You have already started into the scenes contained in the presentation. In order to maintain uniformity a simple slide show structure was used. The slides contain a dark background contrasted with lighter text and images. The structure of the slides and the basic interface was obtained from open source reveal.js and repurposed for this project. The goal of the uniformity is to not needlessly distract the reader with too many moving parts. The method of moving between slides also maintains uniformity, sliding down for more information and right for new graphs/information. </p>
+						<p id="subtext">Down for more info</p>
+					</section>
+					<section>Annotations
+						<p id="annotations"></p>
+						<p id="subtext">Down for more info</p>
+					</section>
+					<section>Parameters
+						<p id="parameters"></p>
+						<p id="subtext">Down for more info</p>
+					</section>
+					<section>Triggers
+						<p id="triggers"></p>
+					</section>
 				</section>
-				<section>
+				<section><h4>Construction and Land Development Vs. Existing Structures Funding</h4>
+					<p id="pie"> Before we move onto future graphs it's important to note that during 2007 (peak before financial collapse) the percentage of new homes being built were very high. That means 1/4 loan volume was going to building a new home, rather than funding an existing one. The percentage in 2015 was 13% for reference. This becomes relevant when we see how loan volumes fluctuated over time by individual categories.</p>
 					<p>
 						<iframe id="circleBar" src="html/circleBar.html" scrolling="no" ></iframe>
 					</p>
 				</section>
-				<section><h2>Interactive Line Chart</h2>
-					<p> Description outlining the basic information contained in the interactive line chart that I have created </p>
-					<p>
-						<iframe id="linechart" src="html/lineChart.html" scrolling="no" ></iframe>
-					</p>
+				<section>
+					<section><h5>Total CRE Funded</h5>
+						<p id="totalcre"> The chart contains total CRE funded. The goal is to display an overview of actual market change that helped fuel the economic crisis. You can see how over-leveraged banks were, and how insignificant the drop actually was. It shows how fragile the behemoths actually were. </p>
+						<p>
+							<iframe id="linechart" src="html/totalLine.html" scrolling="no" ></iframe>
+						</p>
+						<p id="subtext">Down for more graphs</p>
+					</section>
+					<section><h5>Residential Funded</h5>
+						<p id="totalcre"> We move onto the residential funded first, since it is the most similar to the totals. We can see that it also has a slight drawback, but that it is likely not the section that fueled the full-blown crisis. Also notice that it does not seem to have fully recovered from the slow-down. </p>
+						<p>
+							<iframe id="linechart" src="html/rezLine.html" scrolling="no" ></iframe>
+						</p>
+						<p id="subtext">Down for more graphs</p>
+					</section>
+					<section><h5>Construction and Development Funded</h5>
+						<p id="totalcre"> The construction and development section covers all commercial real estate construction. These are loans obtained to construct and sell homes. Often these will be big names building a high number of properties. We finally see a section that had a significant impact during the financial crisis. We also see that it is starting to recover. </p>
+						<p>
+							<iframe id="linechart" src="html/cdLine.html" scrolling="no" ></iframe>
+						</p>
+						<p id="subtext">Down for more graphs</p>
+					</section>
+					<section><h5>Multi-Family Funded</h5>
+						<p id="totalcre"> Multi-Family housing includes housing like apartments, duplexes, condos and townhomes. We see that while the single-family housing market took a dip, there was a need for lower cost housing. The need for low cost housing continues strong into today. It is important to note that multi-family housing is a small part of the market. </p>
+						<p>
+							<iframe id="linechart" src="html/mfLine.html" scrolling="no" ></iframe>
+						</p>
+					</section>
 				</section>
 				<section>
-					<h2> hello world </h2>
-					<p>
-						<iframe id="firstplot" src="html/scnd.html" scrolling="no" ></iframe>
-					</p>
-				</section>
-				<section>
-					<section>Hello World</section>
-					<section>
-						 This is a functionality test 
-						<p><iframe id="firstplot" src="html/scnd.html" scrolling="no" ></iframe></p>
+						<h3>Conclusion</h3>
+						<p id="cnclusion">The housing market collapse was obviously fueled by the construction and development loans. The repurcussions reached through several different sectors of business and can be attributed to the current housing market. Most markets across the USA are experiencing a shortage in homes, especially new homes. We also can see how fragile the large banks really are.</p>
 					</section>
-					<section data-background-iframe="html/boxhtml.html" data-background-interactive data-background-position="center">
-					
-					</section>
-					<section><p><iframe id="second" src="html/barChart.html" width="100px" heigth="100%"></iframe></p></section>
-				</section>
 			</div>
 		</div>
 
